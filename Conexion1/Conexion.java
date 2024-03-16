@@ -1,5 +1,6 @@
 package Conexion1;
 import java.sql.*;
+
 public class Conexion {
 public static void main(String[] args) {
     String ruta="jdbc:mysql://localhost:3306/tienda";
