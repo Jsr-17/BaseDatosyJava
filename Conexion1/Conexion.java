@@ -18,7 +18,7 @@ public static void main(String[] args) {
             System.out.println("El id es: "+resultSet.getString("id")+" "+
             "El el nombre es: "+resultSet.getString("nombre")+" "+
             "El precio es: "+resultSet.getString("precio")+" "+ 
-            "El id_fabricante es: "+resultSet.getString(3));
+            "El id_fabricante es: "+resultSet.getString(2));
         }
 
     } catch (Exception e) {
