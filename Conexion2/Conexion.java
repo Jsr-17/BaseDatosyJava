@@ -26,7 +26,6 @@ public class Conexion {
                     resultado.getString(2)+" "+
                     resultado.getString(3)+" "+
                     resultado.getString(4)+" "
-
                 );
             }
 
