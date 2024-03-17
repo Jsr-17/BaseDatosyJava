@@ -5,7 +5,7 @@ import java.sql.*;
 public class Conexion {
     
     public static void main(String[] args) {
-        
+
         try {
             String nombre="curso";
             String ruta="jdbc:mysql://localhost:3306/"+nombre;
@@ -18,6 +18,7 @@ public class Conexion {
 
             //Creamos objeto de statement
             Statement statement=con.createStatement();
+
             ResultSet resultado=statement.executeQuery(sentencia);
 
             while (resultado.next()) {
