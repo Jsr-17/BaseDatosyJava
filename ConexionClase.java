@@ -18,13 +18,20 @@ public class ConexionClase {
         try{
             Statement state = con.createStatement();
             ResultSet resultado=state.executeQuery(consulta);
+            ResultSetMetaData datos= resultado.getMetaData();
+            int n= datos.getColumnCount();
 
             while (resultado.next()) {
+                String valor="";
+                for (int i = 1; i < n; i++) {
+                    if (resultado.getString(i)== null) {
+                        valor+= "nulo ";
+                    }else{
+                        valor+=resultado.getString(i)+" ";
+                    }
+                }
                 System.out.println(
-                    resultado.getString(1)+" "+
-                    resultado.getString(2)+" "+
-                    resultado.getString(3)+" "+
-                    resultado.getString(4)+" "
+                valor
                 );
             }
 
@@ -32,5 +39,8 @@ public class ConexionClase {
             e.printStackTrace();
         }
 
+    }
+    public void consultaPreparada(){
+        
     }
 }
