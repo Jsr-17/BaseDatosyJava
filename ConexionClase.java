@@ -34,13 +34,37 @@ public class ConexionClase {
                 valor
                 );
             }
-
+            resultado.close();
         }catch(Exception e){
             e.printStackTrace();
         }
 
     }
-    public void consultaPreparada(){
-        
+    public void consultaPreparadaLocalidadCliente(String localidad){
+        try {
+            PreparedStatement statement= con.prepareStatement("Select * from clientes where localidad=?");
+            statement.setString(1, localidad);
+            ResultSet resultado= statement.executeQuery();
+            ResultSetMetaData datos= resultado.getMetaData();
+            int n= datos.getColumnCount();
+
+            while (resultado.next()) {
+                String valor="";
+                for (int i = 1; i < n; i++) {
+                    if (resultado.getString(i)== null) {
+                        valor+= "nulo ";
+                    }else{
+                        valor+=resultado.getString(i)+" ";
+                    }
+                }
+                System.out.println(
+                valor
+                );
+            }
+            resultado.close();
+
+        } catch (Exception e) {
+           e.printStackTrace();
+        }
     }
 }
